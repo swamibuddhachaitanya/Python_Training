@@ -1,0 +1,28 @@
+{% extends 'mytemplate.html' %}
+
+{% block myh1 %}
+New User? Register Here
+{% endblock %}
+
+{% block mycontent %}
+
+<form action="/addnewuser" method="post">
+    User Name: <input type="text" name="uname" required />
+    <br>
+    <br>
+    Password: <input type="password" name="pw1" required />
+    <br>
+    <br>
+    Re Enter Password: <input type="password" name="pw2" required />
+    <br>
+    <br>
+    EMail: <input type="email" name="email" required />
+    <br>
+    <br>
+    <input type="submit" value="Register" />
+</form>
+ <br>
+ <br>
+<a href="/login">Existing User? Click here to login</a>
+
+{% endblock %}

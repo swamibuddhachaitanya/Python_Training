@@ -1,0 +1,22 @@
+{% extends 'mytemplate.html' %}
+
+{% block myh1 %}
+Login Here
+{% endblock %}
+
+{% block mycontent %}
+
+<form action="/validatelogin" method="post">
+    User Name: <input type="text" name="uname" required />
+    <br>
+    <br>
+    Password: <input type="password" name="pw" required />
+    <br>
+    <br>
+    <input type="submit" value="Login" />
+</form>
+ <br>
+ <br>
+<a href="/register">New User? Click here to register</a>
+
+{% endblock %}

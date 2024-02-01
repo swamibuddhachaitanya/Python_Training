@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to mywebsite</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Logo</h1>
+<hr>
+<nav>
+    <a href="/">Home</a>|
+    <a href="/about">About</a>|
+    <a href="/login">Login</a>|
+    <a href="/weatherapi">Weather Report</a>|
+</nav>
+<hr>
+
+<h1>{% block  myh1 %} {% endblock %}</h1>
+
+{% block mycontent %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'mytemplate.html' %}
+
+{% block myh1 %}
+Know Your City Weather Here
+{% endblock %}
+
+{% block mycontent %}
+
+<form action="/weatherreport" method="post">
+    Enter Your City Name: <input type="text" name="city" required />
+    <br>
+    <br>
+    <input type="submit" value="Get Weather Report" />
+</form>
+
+{% endblock %}

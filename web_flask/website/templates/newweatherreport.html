@@ -1,0 +1,25 @@
+{% extends 'mytemplate.html' %}
+
+{% block myh1 %}
+Weather Reports
+{% endblock %}
+
+{% block mycontent %}
+
+<h2>Weather Report Display Style - 1</h2>
+<hr>
+{{api_data}}
+<hr>
+
+<h2>Weather Report Display Style - 2</h2>
+<hr>
+<table border="1" bgcolor="green">
+    {% for i, j in api_data.items() %}
+    <tr>
+        <td>{{i}}</td>
+        <td>{{j}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<hr>
+{% endblock %}

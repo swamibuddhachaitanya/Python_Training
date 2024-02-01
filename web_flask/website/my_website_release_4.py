@@ -1,0 +1,52 @@
+"""
+added about.html
+"""
+
+# ----------
+# Where to keep html files?
+############
+# - create a directory 'templates' inside 'website' folder
+# - keep all html files inside 'templates'
+######################
+
+# ----------
+# Create App for our website
+############
+import flask
+# my_website_app = flask.Flask("MyApp")
+my_website_app = flask.Flask(__name__)
+######################
+
+
+# # ----------
+# # END POINT - 1: URL http://127.0.0.1:5000/ MAPPED to route("/")
+# ############
+# @my_website_app.route("/")
+# def my_index_page():
+#     return "WEL COME"
+# ######################
+
+
+# ----------
+# END POINT - 1: URL http://127.0.0.1:5000/ MAPPED to route("/")
+############
+@my_website_app.route("/")
+def my_index_page():
+    return flask.render_template("index.html")
+######################
+
+
+# ----------
+# END POINT - 2: URL http://127.0.0.1:5000/about MAPPED to route("/about")
+############
+@my_website_app.route("/about")
+def my_about_page():
+    return flask.render_template("about.html")
+######################
+
+# ----------
+# Run builtin server
+############
+my_website_app.run(debug=True)
+# my_website_app.run(host='127.0.0.1', port=1234)
+######################
