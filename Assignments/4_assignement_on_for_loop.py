@@ -52,19 +52,3 @@ lines = input_data.splitlines()
 # Print the expected output format
 print("Expected Output")
 print("-" * 15)
-
-# Iterate over each line and extract information
-for line in lines:
-    if len(line[0:16].split("."))==4:
-        parts = line.split()
-
-        # Extract IP, DATE, PICS, and URL
-        ip = parts[0]
-        date = parts[3][1:12]
-        pics = parts[6].split("/")[2][:-4] if "/pics/" in line else "No Image"
-        for part in parts:
-            if "http://" in part:
-                url= part
-
-
-        print(f"{ip}" +"   "+ f"{date}" +"   "+ f"{pics}" +"   "+  f"{url}")

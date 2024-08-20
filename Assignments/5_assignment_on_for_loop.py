@@ -47,21 +47,3 @@ print(input_data)
 
 print("#"*40, end="\n\n")
 ###########################
-
-stored_data=[]
-
-for line in input_data.splitlines():
-    if len(line[0:16].split(".")) == 4:
-        parts = line.split()
-
-        # Extract IP, DATE, PICS, and URL
-        ip = parts[0]
-        date = parts[3][1:12]
-        pics = parts[6].split("/")[2][:-4] if "/pics/" in line else "No Image"
-        for part in parts:
-            if "http://" in part:
-                url = part
-
-        stored_data.append((ip, date, pics, url))
-
-print(stored_data,sep="\n")

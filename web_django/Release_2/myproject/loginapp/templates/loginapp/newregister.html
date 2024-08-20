@@ -1,0 +1,18 @@
+{% extends 'mytemplate.html' %}
+
+{% block myh1 %}
+New User? Register Here
+{% endblock %}
+
+{% block mycontent %}
+
+<form action="/login/addnewuser/" method="post">
+    {% csrf_token %}
+   {{new_form}}
+    <input type="submit" value="Register" />
+</form>
+ <br>
+ <br>
+<a href="/login/">Existing User? Click here to login</a>
+
+{% endblock %}

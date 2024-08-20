@@ -47,37 +47,6 @@ print(input_data)
 
 print("#"*40, end="\n\n")
 ###########################
-# Split the input data into lines
-lines = input_data.splitlines()
 
-# Create a dictionary to store the extracted information
-result_dict = {}
 
-# Counter to track the index in the dictionary
-index = 0
-
-# Iterate over each line and extract information
-for line in lines:
-    if len(line[0:16].split(".")) == 4:
-        parts = line.split()
-
-        # Extract IP, DATE, PICS, and URL
-        ip = parts[0]
-        date = parts[3][1:12]
-        pics = parts[6].split("/")[2][:-4] if "/pics/" in line else "No Image"
-        for part in parts:
-            if "http://" in part:
-                url = part
-
-        # Store the information in the dictionary
-        result_dict[index] = (ip, date, pics, url)
-        index += 1
-
-# Print the expected output format
-print("Expected Output")
-print("-" * 15)
-
-# Iterate over the dictionary and print each entry
-for index, info in result_dict.items():
-    print(f"{index}: {info}")
 

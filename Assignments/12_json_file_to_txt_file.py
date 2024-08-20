@@ -25,14 +25,3 @@ json_file_path = "log_data.json"
 # Define the path to json_to_text_report.txt
 json_to_text_report_path = "json_to_text_report.txt"
 
-# Read data from the JSON file
-with open(json_file_path, 'r') as json_file:
-    data_dict = json.load(json_file)
-
-# Write the data to json_to_text_report.txt
-with open(json_to_text_report_path, 'w') as json_to_text_report:
-    json_to_text_report.write("    IP                  DATE            PICS                URL\n")
-    for ip, date, pics, url in zip(data_dict['IP'], data_dict['DATE'], data_dict['PICS'], data_dict['URL']):
-        json_to_text_report.write(f"{ip:<15} {date:<18} {pics:<15} {url}\n")
-
-print(f"Data written to '{json_to_text_report_path}' successfully.")
